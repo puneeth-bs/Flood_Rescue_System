@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Details"
+        android:textSize="20sp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#403E3E"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:id="@+id/text"
+        />
+
+    <EditText
+        android:id="@+id/edit_fullname"
+        android:layout_below="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:padding="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edit_text_shadow"
+        android:hint="Full name" />
+    <EditText
+        android:id="@+id/edit_age"
+        android:layout_below="@+id/edit_fullname"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Age"
+        android:padding="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edit_text_shadow"
+        />
+
+    <EditText
+        android:id="@+id/edit_bloog_group"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/edit_age"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/edit_text_shadow"
+        android:hint="Blood group"
+        android:padding="10dp" />
+
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/edit_bloog_group"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/cancelButton"
+        android:text="Cancel"
+        android:textColor="#fff"
+        android:layout_marginBottom="20dp"
+        />
+
+    <Button
+        android:id="@+id/sendButton"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/edit_bloog_group"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/cancelButton"
+        android:text="Send"
+        android:layout_marginBottom="20dp"
+        android:textColor="#fff"/>
+
+
+</RelativeLayout>

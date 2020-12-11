@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relativeLayout1"
+        >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/loginui1"
+        android:layout_marginTop="-500dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFF"
+        android:text="Login"
+        android:textSize="25sp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:textStyle="bold"
+        />
+
+
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="270dp"
+        android:src="@drawable/loginui2"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/loginui2"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:id="@+id/cardViewLayout"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="450dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            app:cardCornerRadius="20dp"
+            android:layout_margin="9dp"
+            app:cardElevation="7dp"
+            app:cardUseCompatPadding="true"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:hint="Email"
+                    android:padding="10dp"
+                    android:background="@drawable/edit_text_shadow"
+                    android:drawableStart="@drawable/email"
+                    android:drawableLeft="@drawable/email"
+                    android:drawablePadding="10dp"
+                    android:id="@+id/loginEmail"
+                    />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="20dp"
+                    android:hint="Password"
+                    android:padding="10dp"
+                    android:background="@drawable/edit_text_shadow"
+                    android:drawableStart="@drawable/password"
+                    android:drawableLeft="@drawable/password"
+                    android:drawablePadding="10dp"
+                    android:layout_below="@+id/loginEmail"
+                    android:id="@+id/loginPassword"
+                    android:inputType="textPassword"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/loginPassword"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="-10dp"
+                    android:layout_marginRight="20dp"
+                    android:text="Forgot password"
+                    android:id="@+id/forgotPassword"
+                    />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_below="@+id/loginPassword"
+                    android:layout_margin="30dp"
+                    android:background="@drawable/loginbackground"
+                    android:text="Login"
+                    android:id="@+id/loginButton"
+                    android:textColor="#FFF"
+                    />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/registerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cardViewLayout"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:text="Register"
+        android:textColor="#FFF"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/registerText"
+        android:layout_below="@+id/cardViewLayout"
+        android:layout_marginTop="41dp"
+        android:layout_marginBottom="30dp"
+        android:text="here"
+        android:textColor="#FFF"
+        android:textSize="15sp"
+        android:layout_marginLeft="10dp"
+
+        />
+    <ImageButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/registerbutton"
+        android:layout_below="@+id/cardViewLayout"
+        android:src="@drawable/forwardarrow"
+        android:id="@+id/registerButton"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        />
+
+    </RelativeLayout>
+</ScrollView>
