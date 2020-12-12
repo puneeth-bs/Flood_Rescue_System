@@ -68,6 +68,7 @@ public class MapFragment extends Fragment implements CustomDialog.CustomDialogLi
         View alertView = getLayoutInflater().inflate(R.layout.dialog, null);
         alertBuilder.setView(alertView);
         AlertDialog alertDialog = alertBuilder.create();
+        alertDialog.setCanceledOnTouchOutside(false);
         permissionButton = alertView.findViewById(R.id.permissionButton);
 
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager()
@@ -103,7 +104,7 @@ public class MapFragment extends Fragment implements CustomDialog.CustomDialogLi
                             HashMap<String, Object> map = new HashMap<>();
                             map.put("Name", person_name);
                             map.put("Age", age);
-                            map.put("Blood group", blood_group);
+                            map.put("blood_group", blood_group);
                             map.put("Location", location);
                             progressDialog.show();
                             FirebaseDatabase.getInstance().getReference("Locations").push()

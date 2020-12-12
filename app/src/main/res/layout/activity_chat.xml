@@ -1,5 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ListView
+        android:id="@+id/list_conversation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="64dp"
+        android:background="#efefef" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="5dp"
+        >
+
+        <EditText
+            android:id="@+id/ed_enter_message"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginEnd="75dp"
+            android:layout_marginRight="100dp"
+            android:layout_marginTop="10dp"
+            android:hint="Type here"
+            android:paddingStart="15dp"
+            android:foregroundGravity="center"
+            android:background="@drawable/chat_box_background"
+            android:paddingLeft="10dp"
+            android:paddingBottom="2dp"
+            />
+
+        <Button
+            android:id="@+id/btn_send_msg"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/registerbutton"
+            android:drawableRight="@drawable/send"
+            android:textColor="#fff"
+            android:gravity="center"
+            />
+    </RelativeLayout>
+
+
 
 </RelativeLayout>

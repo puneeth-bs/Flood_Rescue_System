@@ -7,14 +7,21 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
+import android.app.Activity;
+import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends AppCompatActivity {
+
+    private BluetoothAdapter bluetoothAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,10 +31,11 @@ public class HomeActivity extends AppCompatActivity {
                 && ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(HomeActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION
                     , Manifest.permission.ACCESS_COARSE_LOCATION}, 100 );
+
+
         }
 
-
-
+        initBluetoothAdapter();
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new HomeFragment()).commit();
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -53,6 +61,80 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+
+
+    }
+
+    private void initBluetoothAdapter() {
+
+        bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        if(bluetoothAdapter == null){
+            Toast.makeText(this, "Bluetooth off", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.top_menu_list, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        if(id == R.id.account_item){
+            return true;
+        }
+
+        if(id == R.id.logout_item){
+            Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+            startActivity(intent);
+            return true;
+        }
+
+        if(id == R.id.bluetooth){
+            enableBluetooth();
+            return true;
+        }
+
+        if(id == R.id.available_devices){
+            showAvailableDevices();
+            return true;
+        }
+        return true;
+    }
+
+    private void showAvailableDevices() {
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    private void enableBluetooth() {
+
+        if(bluetoothAdapter.isEnabled()){
+            Toast.makeText(this, "Bluetooth already enabled", Toast.LENGTH_SHORT).show();
+        }else{
+            bluetoothAdapter.enable();
+            Toast.makeText(this, "Bluetooth enabled", Toast.LENGTH_SHORT).show();
+        }
 
 
     }
