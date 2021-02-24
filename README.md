@@ -1,4 +1,4 @@
-# DSC_WOW_D-Alert
+# D-Alert android application
 Project for DSC wow code of duty hackathon
 
 eYIC (eYantra Innovation Challenge)
