@@ -23,18 +23,20 @@ var firebaseConfig = {
   let res = document.querySelector(".result");
   res.innerHTML="";
 
+
+  console.log(0, scores[0])
   for(var i =0;i< keys.length;i++)
   {
     var j =i+1;
     var k =keys[i];
+    console.log(k, scores[k].Name)
     var msg = scores[k].Designation;
     var msg1 = scores[k].Name;
     var loc = scores[k].Location;
 
     var bl = scores[k].blood_group;
     // var lat = loc.slice()
-
-
+   console.log(i, scores[k].Location);
     res.innerHTML += `<div>
     <p>${j+". "+msg1+"<br />"+msg+"<br />"+loc+"<br/>"+"Blood group: "+bl}<p>
     </div>`;
@@ -42,8 +44,14 @@ var firebaseConfig = {
 
   }
 
-  console.log(as,as1);
-  const mymap = L.map('mymap').setView([15.3173, 75.7139], 5)
+  
+  var k1=keys[0];
+  
+  var loc1 = scores[k1].Location;
+  var aall = loc1.slice(10,30);
+  var aall1 = aall.split(",");
+  console.log(aall1[0],aall1[1]);
+  const mymap = L.map('mymap').setView([aall1[0], aall1[1]], 13)
   const attribution =
     '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
   const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
