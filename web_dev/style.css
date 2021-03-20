@@ -1,0 +1,101 @@
+.imga
+{
+    background-image: url("https://assets.awwwards.com/awards/images/2015/04/pattern.jpg");
+
+
+}
+.but
+{
+  padding-left: 59%;
+
+ }
+ .but1
+ {
+   padding-left: 21%;
+ }
+
+   #mymap {
+     height: 550px;
+     width : 660px;
+   }
+
+ .new
+ {
+   width: 500px;
+   height: 500px;
+   padding-top: 50px;
+   padding-bottom: 30px;
+   padding-right: 50px;
+
+ }
+ .new1
+ {
+   width: 500px;
+   height: 500px;
+   padding-top: 50px;
+   padding-bottom: 30px;
+   padding-left: 50px;
+
+ }
+
+.pes
+{
+  color: black;
+}
+a{
+
+    color: black;
+
+    font-family: 'Montserrat', sans-serif;
+
+    margin: 10px 20px;
+    font-size: large;
+
+    text-decoration: none;
+
+  }
+
+
+    a:hover {
+
+    color: #EAF6F6;
+
+  }
+
+h1
+{
+  color: black;
+  text-align: left;
+  font-size: large;
+}
+body
+{
+
+  background-image: url("https://assets.awwwards.com/awards/images/2015/04/pattern.jpg");
+  color: black;
+}
+/* .card
+{
+  background-color: #424242;
+} */
+.card-body
+{
+    background-color: #white;
+}
+.c1
+{
+
+  background-color: #white;
+
+
+}
+.c2
+{
+
+  background-color: #white;
+  max-height: 550px;
+
+  overflow: auto;
+
+
+}
