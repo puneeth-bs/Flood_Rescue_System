@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReliefFundActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="UPI Payment"
+            android:textColor="@color/textColorDark"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:drawableLeft="@drawable/amount"
+            android:hint="Amount"
+            android:padding="20dp"
+            android:drawablePadding="10dp"
+
+            />
+
+        <EditText
+            android:id="@+id/upi_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:drawableLeft="@drawable/upi"
+            android:hint="UPI ID"
+            android:padding="27dp"
+            android:drawablePadding="10dp"
+            />
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="20dp"
+            android:drawableLeft="@drawable/person"
+            android:hint="Name"
+            android:drawablePadding="10dp"
+            />
+        <EditText
+            android:id="@+id/notes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="20dp"
+            android:drawableLeft="@drawable/note"
+            android:hint="Notes"
+            android:drawablePadding="10dp"
+            />
+
+        <Button
+            android:id="@+id/buttonpay"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_marginTop="20dp"
+            android:text="Pay"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            />
+
+
+
+
+
+    </LinearLayout>
+
+</ScrollView>

@@ -17,17 +17,36 @@
         />
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginRight="70dp"
-        android:layout_marginLeft="70dp"
-        android:layout_marginBottom="30dp"
-        android:background="@drawable/loginbackground"
+        android:layout_margin="4dp"
         android:text="Send Location"
-        android:textColor="#fff"
-        android:paddingTop="8dp"
-        android:gravity="center_horizontal"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:gravity="center"
         android:id="@+id/sendLocationButton"
         />
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/direction"
+        android:background="@drawable/registerbutton"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp"
+        android:id="@+id/getRescueDirections"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/userID"
+        android:visibility="invisible"
+        android:textSize="20sp"
+        android:textColor="#000"
+        />
+
+
 
 </RelativeLayout>

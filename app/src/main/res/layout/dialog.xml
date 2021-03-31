@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,7 +16,6 @@
         android:textStyle="bold"
         android:id="@+id/text"
         />
-
     <EditText
         android:id="@+id/edit_fullname"
         android:layout_below="@+id/text"
@@ -27,7 +26,10 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/edit_text_shadow"
-        android:hint="Full name" />
+        android:hint="Full name"
+        android:textColorHint="@color/hintColor"
+        android:textColor="@color/textColorLight"
+        />
     <EditText
         android:id="@+id/edit_age"
         android:layout_below="@+id/edit_fullname"
@@ -39,6 +41,8 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/edit_text_shadow"
+        android:textColorHint="@color/hintColor"
+        android:textColor="@color/textColorLight"
         />
 
     <EditText
@@ -50,32 +54,40 @@
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/edit_text_shadow"
+        android:textColorHint="@color/hintColor"
         android:hint="Blood group"
+        android:textColor="@color/textColorLight"
         android:padding="10dp" />
+
+
 
     <Button
         android:layout_width="120dp"
         android:layout_height="60dp"
-        android:layout_below="@+id/edit_bloog_group"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="20dp"
         android:id="@+id/cancelButton"
+        android:layout_below="@id/edit_bloog_group"
+        android:layout_marginTop="20dp"
+        android:layout_alignLeft="@id/edit_bloog_group"
         android:text="Cancel"
-        android:textColor="#fff"
-        android:layout_marginBottom="20dp"
+        android:textColor="#FFF"
+        android:layout_marginLeft="20dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_marginBottom="30dp"
+
         />
 
     <Button
-        android:id="@+id/sendButton"
         android:layout_width="120dp"
         android:layout_height="60dp"
-        android:layout_below="@+id/edit_bloog_group"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="10dp"
-        android:layout_toRightOf="@+id/cancelButton"
+        android:id="@+id/sendButton"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/edit_bloog_group"
+        android:layout_alignRight="@id/edit_bloog_group"
         android:text="Send"
-        android:layout_marginBottom="20dp"
-        android:textColor="#fff"/>
-
+        android:textColor="#FFF"
+        android:layout_marginRight="20dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_marginBottom="30dp"
+        />
 
 </RelativeLayout>

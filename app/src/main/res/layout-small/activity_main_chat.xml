@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".MainChatActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColorDark"
+            android:text="Connection Status : "
+            android:id="@+id/connectionStatusText"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/connectionStatus"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@+id/connectionStatusText"
+            android:text="Not connected"
+            android:textSize="15sp"
+            android:paddingLeft="10dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/connectionStatus"
+            android:paddingLeft="5dp"
+            android:layout_marginTop="15dp"
+            android:textSize="15sp"
+            android:visibility="invisible"
+            android:id="@+id/connectedToTextView"
+            />
+
+        <Button
+            android:layout_width="180dp"
+            android:layout_height="60dp"
+            android:id="@+id/connectButton"
+            android:text="Connect"
+            android:layout_below="@+id/connectionStatusText"
+            android:textColor="@color/white"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="10dp"
+            />
+        <Button
+            android:layout_width="180dp"
+            android:layout_height="60dp"
+            android:id="@+id/discovearbleButton"
+            android:text="Discover"
+            android:textColor="@color/white"
+            android:layout_margin="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/connectionStatusText"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/connectButton"
+            android:text="Available devices"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/availabledevicesTextView"
+            android:textColor="@color/textColorDark"
+            android:textSize="18sp"
+            android:padding="8dp"
+            android:visibility="gone"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/availableDevicesListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="5dp"
+        android:background="@drawable/chat_box_background"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        >
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:id="@+id/listView"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edit_text_shadow"
+                android:layout_margin="20dp"
+                android:visibility="invisible"
+                android:elevation="10dp"
+                />
+
+
+
+
+        <ListView
+            android:id="@+id/chatListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/sendMessageButton"
+            />
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:textSize="15sp"
+            android:id="@+id/messageDisplay"
+            android:gravity="center"
+            android:visibility="invisible"
+            />
+
+        <EditText
+            android:id="@+id/textMessageBox"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/edit_text_shadow"
+            android:layout_marginRight="60dp"
+            android:layout_marginBottom="10dp"
+            android:hint="Type your message here"
+            android:paddingLeft="20dp"
+            android:layout_marginLeft="5dp"
+            android:maxLength="200"
+            android:maxLines="100"
+            />
+
+        <ImageView
+            android:id="@+id/sendMessageButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/send"
+            android:background="@drawable/registerbg"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:paddingLeft="15dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="5dp"
+            />
+
+        <ImageView
+            android:id="@+id/bluetoothLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/location_grey"
+            android:layout_toLeftOf="@id/sendMessageButton"
+            android:paddingBottom="13dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentBottom="true"
+            />
+    </RelativeLayout>
+
+
+</LinearLayout>

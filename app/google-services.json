@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "366752650310",
+    "firebase_url": "https://disastermangement-1de94-default-rtdb.firebaseio.com",
     "project_id": "disastermangement-1de94",
     "storage_bucket": "disastermangement-1de94.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "366752650310-tsqqfmsp4ppsurunge3csppjq0o13q70.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.disastermanagement",
+            "certificate_hash": "b9ff0bd96bfbb2365e6ac3f3239dcc01c9f68f7d"
+          }
+        },
         {
           "client_id": "366752650310-l2ket86np5ic9ts1gad02n0hoigc5f2p.apps.googleusercontent.com",
           "client_type": 3

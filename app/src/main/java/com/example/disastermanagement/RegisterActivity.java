@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -15,14 +16,19 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+
+//Registration Activity
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private TextInputLayout firstNameLayout;
-    private TextInputLayout lastNameLayout;
+    private TextInputLayout fullNameLayout;
     private TextInputLayout confirm_passwordLayout;
     private TextInputLayout emailLayout;
     private TextInputLayout passwordLayout;
+    private TextInputLayout phone_number_layout;
     private Button registerButton;
     private FirebaseAuth mAuth;
     private ProgressDialog progressDialog;
@@ -32,12 +38,12 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        mAuth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance(); //getting firebase for authentication
 
-        firstNameLayout = findViewById(R.id.first_name_layout);
-        lastNameLayout = findViewById(R.id.last_name_layout);
+        fullNameLayout = findViewById(R.id.full_name_layout);
         emailLayout = findViewById(R.id.email_layout);
         passwordLayout = findViewById(R.id.password_layout);
+        phone_number_layout = findViewById(R.id.phone_number_layout);
         registerButton = findViewById(R.id.registerButton);
         confirm_passwordLayout = findViewById(R.id.confirm_password_layout);
 
@@ -46,12 +52,13 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(validateFirstName() && validate_emailLayout()
-                        && validateLastName() && validatepasswordLayout() && confirm_password_layout()){
+                if(validateFullName() && validate_emailLayout() && validate_phone()
+                        && validatepasswordLayout() && confirm_password_layout()){
 
                     progressDialog = new ProgressDialog(RegisterActivity.this, R.style.MyAlertDialogStyle);
-                    progressDialog.setTitle("Creating account");
+                    progressDialog.setTitle("Creating account...");
                     progressDialog.setMessage("Please wait while we create your account.");
+                    sendUserInfoToDatabase();
                     progressDialog.setCanceledOnTouchOutside(false);
                     progressDialog.show();
 
@@ -76,29 +83,49 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
+    private void sendUserInfoToDatabase() {
+
+        HashMap<String, Object> map = new HashMap<>();//creating hashmap datastructure
+        map.put("Name", getFullName());//pushing attribiutes into hashmap()
+        map.put("Email", getEmail());
+        map.put("Phone", getPhone());
+
+        FirebaseDatabase.getInstance().getReference("Users_information").push()
+                .setValue(map)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+
+                    }
+                });
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+
+    }
+
     private void SendUserToLoginActivity(){
         Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
         startActivity(intent);
     }
 
-    private boolean validateFirstName(){
-        String firstName = firstNameLayout.getEditText().getText().toString().trim();
+    private boolean validateFullName(){
+        String firstName = fullNameLayout.getEditText().getText().toString().trim();
         if(firstName.isEmpty()){
-            firstNameLayout.setError("Field can't be empty");
+            fullNameLayout.setError("Field can't be empty");
             return false;
         }else{
-            firstNameLayout.setError(null);
-            return true;
-        }
-    }
-
-    private boolean validateLastName(){
-        String LastName = lastNameLayout.getEditText().getText().toString().trim();
-        if(LastName.isEmpty()){
-            lastNameLayout.setError("Field can't be empty");
-            return false;
-        }else{
-            lastNameLayout.setError(null);
+            fullNameLayout.setError(null);
             return true;
         }
     }
@@ -130,9 +157,33 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
+    private boolean validate_phone(){
+        String phone = phone_number_layout.getEditText().getText().toString().trim();
+
+        if(phone.isEmpty()){
+            phone_number_layout.setError("Field can't be empty");
+            return false;
+        }else if(phone.length() > 10){
+            phone_number_layout.setError("Enter a valid phone number");
+            return false;
+        }else{
+            emailLayout.setError(null);
+            return true;
+        }
+    }
+
     private String getEmail(){
-        String Useremail = emailLayout.getEditText().getText().toString().trim();
+        String Useremail = emailLayout.getEditText().getText().toString();
         return Useremail;
+    }
+
+    private String getFullName(){
+        String full_name = fullNameLayout.getEditText().getText().toString().trim();
+        return full_name;
+    }
+    private String getPhone(){
+        String phone_number = phone_number_layout.getEditText().getText().toString().trim();
+        return phone_number;
     }
 
     private String getPassword(){

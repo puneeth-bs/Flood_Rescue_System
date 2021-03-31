@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relativeLayout1"
+        >
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Login"
+            android:layout_alignParentTop="true"
+            android:id="@+id/loginTextview"
+            android:textColor="@color/textColorDark"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loginTextview"
+        android:id="@+id/cardViewLayout"
+        android:layout_marginBottom="20dp"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            app:cardCornerRadius="20dp"
+            android:layout_margin="10dp"
+            app:cardElevation="7dp"
+            app:cardUseCompatPadding="true"
+            android:paddingBottom="20dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="20dp"
+                android:layout_margin="10dp"
+                >
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:hint="Email"
+                    android:padding="10dp"
+                    android:background="@drawable/edit_text_shadow"
+                    android:drawableStart="@drawable/email"
+                    android:drawableLeft="@drawable/email"
+                    android:drawablePadding="10dp"
+                    android:id="@+id/loginEmail"
+                    />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="20dp"
+                    android:hint="Password"
+                    android:padding="10dp"
+                    android:background="@drawable/edit_text_shadow"
+                    android:drawableStart="@drawable/password"
+                    android:drawableLeft="@drawable/password"
+                    android:drawablePadding="10dp"
+                    android:layout_below="@+id/loginEmail"
+                    android:id="@+id/loginPassword"
+                    android:inputType="textPassword"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/loginPassword"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="-10dp"
+                    android:layout_marginRight="20dp"
+                    android:text="Forgot password"
+                    android:id="@+id/forgotPassword"
+                    />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/loginPassword"
+                    android:layout_margin="30dp"
+                    android:background="@drawable/loginbackground"
+                    android:text="Login"
+                    android:id="@+id/loginButton"
+                    android:textColor="#FFF"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/loginButton"
+                    android:layout_centerHorizontal="true"
+                    android:text="OR"
+                    android:id="@+id/orTextView"
+                    />
+
+                <com.google.android.gms.common.SignInButton
+                    android:id="@+id/SignInUsingGoogle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/orTextView"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:padding="3dp" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+        <ImageButton
+            android:id="@+id/registerButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/registerbutton"
+            android:src="@drawable/forwardarrow"
+            android:layout_below="@+id/cardViewLayout"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:textColor="@color/textColorLight"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Register here"
+            android:layout_alignParentRight="true"
+            android:layout_toLeftOf="@+id/registerButton"
+            android:paddingRight="80dp"
+            android:layout_below="@+id/cardViewLayout"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:padding="10dp"
+            android:text="Copyright TeamJC"
+            android:gravity="center"
+            />
+
+
+    </RelativeLayout>
+</LinearLayout>

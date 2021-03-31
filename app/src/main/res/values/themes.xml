@@ -4,11 +4,12 @@
         <!-- Primary brand color. -->
         <item name="colorPrimary">#2B4BEB</item>
         <item name="colorPrimaryVariant">#2B4BEB</item>
-        <item name="colorOnPrimary">#838282</item>
+        <item name="colorOnPrimary">#0E0E0E</item>
+        <item name="colorAccent">#2B4BEB</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">#838282</item>
         <item name="colorSecondaryVariant">#838282</item>
-        <item name="colorOnSecondary">#838282</item>
+        <item name="colorOnSecondary">#0C0C0C</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
@@ -16,5 +17,20 @@
 
     <style name="MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
         <item name="colorAccent">#2B4BEB</item>
+    </style>
+    <style name="AlertDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">#2B4BEB</item>
+    </style>
+
+    <style name="Theme.AppCompat.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">#2B4BEB</item>
+        <item name="colorPrimaryVariant">#2B4BEB</item>
+        <item name="colorOnPrimary">#838282</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#838282</item>
+        <item name="colorSecondaryVariant">#838282</item>
+        <item name="colorOnSecondary">#838282</item>
     </style>
 </resources>

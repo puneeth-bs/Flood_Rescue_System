@@ -20,7 +20,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/first_name_layout"
+        android:id="@+id/full_name_layout"
         app:errorEnabled="true"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
@@ -29,32 +29,13 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="First name"
-            android:id="@+id/first_name"
+            android:hint="Full Name"
+            android:id="@+id/full_name"
             android:backgroundTint="#FFF"
             android:inputType="text"
             />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/last_name_layout"
-        app:errorEnabled="true"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="15dp"
-        android:layout_below="@id/first_name_layout"
-        >
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Last name"
-            android:id="@+id/last_name"
-            android:inputType="text"
-            android:backgroundTint="#FFF"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -65,7 +46,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginTop="15dp"
-        android:layout_below="@id/last_name_layout"
+        android:layout_below="@id/full_name_layout"
         >
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -74,6 +55,26 @@
             android:id="@+id/email"
             android:inputType="textEmailAddress"
             android:backgroundTint="#FFF"
+            tools:ignore="MissingClass" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/phone_number_layout"
+        app:errorEnabled="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/email_layout"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Phone"
+            android:id="@+id/phone_number"
+            android:backgroundTint="#FFF"
+            android:inputType="phone"
             />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -85,7 +86,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginTop="15dp"
-        android:layout_below="@id/email_layout"
+        android:layout_below="@id/phone_number_layout"
         app:passwordToggleEnabled="true"
         >
         <com.google.android.material.textfield.TextInputEditText
@@ -121,14 +122,16 @@
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         android:layout_below="@+id/confirm_password_layout"
-        android:layout_margin="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:textColor="#ffff"
         android:text="Register"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
         android:id="@+id/registerButton"
         />
-
 
 
 </RelativeLayout>

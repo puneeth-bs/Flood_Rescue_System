@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="black">#FF000000</color>
+    <color name="colorPrimary">#2B4BEB</color>
+    <color name="colorPrimaryDark">#2B4BEB</color>
+    <color name="high_risk">#FA1A1A</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="hintColor">#838282</color>
+    <color name="textColorLight">#393838</color>
+    <color name="textColorDark">#232323</color>
+    <color name="chatLayoutBackground">#B8B8B8</color>
+    <color name="low_risk">#019307</color>
+    <color name="medium_risk"></color>
+
+    <color name="light_gray">#DCD7D7</color>
+    <color name="cardViewBG">#FF764B</color>
+    <color name="cardViewBG1">#A1E3EC</color>
+    <color name="green">#019307</color>
+    <color name="sky_color">#0890FB</color>
+    <color name="route_red">#FB1B0B</color>
 </resources>
